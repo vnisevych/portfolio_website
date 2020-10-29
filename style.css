@@ -1,0 +1,59 @@
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#wrapper {
+	flex: 1;
+}
+
+header .nav-item .nav-link {
+	color: #117a8b;
+}
+
+
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+
+
+#wrapper.gallery .album .carousel {
+	display: block;
+}
+
+#wrapper .album .row {
+	display: flex;
+}
+
+#wrapper .album .carousel,
+#wrapper.gallery .album .row {
+	display: none;
+}
+
+#wrapper.gallery .jumbotron {
+	display: none;
+}
+
+#btn {
+	display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 9999;
+    margin-bottom: 20px;
+}
+
+#btn button {
+	border-color: #117a8b;
+    color: #117a8b;
+}
