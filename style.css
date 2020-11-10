@@ -19,6 +19,44 @@ header .nav-item .nav-link {
     margin-top: 20px;
 }
 
+
+.category .card {
+	background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.card .card-body {
+	background-color: rgba(0,0,0,0.4);
+	transition: background-color .5s linear;
+}
+.category .card:hover .card-body {
+	background-color: transparent;
+}
+
+.category .card .card-text {
+	color: #fff;
+	text-shadow: 0 0px 4px #000;
+	font-size: 20px;
+
+}
+
+.carousel-item {
+	height: 500px;
+	overflow: hidden;
+}
+
+.carousel-item img {
+    position: absolute!important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
 footer {
 	display: flex;
 	justify-content: space-around;
@@ -56,4 +94,8 @@ footer {
 #btn button {
 	border-color: #117a8b;
     color: #117a8b;
+}
+
+#btn button:hover {
+	color: #fff;
 }

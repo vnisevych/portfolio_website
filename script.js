@@ -17,6 +17,8 @@
 		}).done(function(resp) {
 		  const albums = resp.photosets.photoset;
 
+		  fillCategories(albums);
+
 		  for (const album of albums) {
 
 			const albumUrl = `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos
@@ -28,8 +30,7 @@
 		  	$.ajax({
 			  url: albumUrl,
 			  context: document.body
-			}).done(function(	) {
-				console.log(resp);
+			}).done(function(resp) {
 				const photos = resp.photoset.photo;
 				const title = resp.photoset.title;
 				const id = resp.photoset.id;
@@ -43,26 +44,67 @@
 					const imgUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
 					gallery[id].photos.push(imgUrl);
 				}
-
-				console.log(gallery);
 			});
 		  }
 
 		});
 
-		$('.col-md-4').on( 'click', (function() {
+		$( "#wrapper" ).delegate( ".col-md-4", "click", function(e) {
+			const id = $(e.target).closest('.col-md-4').attr('data-id');
+			fillGallery(id);
 			$('#wrapper').toggleClass('gallery');
-			console.log('ive changed my color');
-		}));
+		});
 
 		$('#btnBack').on( 'click', (function() {
 			$('#wrapper').toggleClass('gallery');
-			console.log('I pushed the btn')
+			clearCarousel();
 		}));
 
-		
+		$( "#wrapper" ).delegate('.carousel-control-prev', 'click', function() {
+		  $('#carousel-example-generic').carousel('prev');
+		});
+		$( "#wrapper" ).delegate('.carousel-control-next', 'click', function() {
+		  $('#carousel-example-generic').carousel('next');
+		});
 
 
 	});
 
+	function fillCategories(categories) {
+		for(let category of categories) {
+			const imgUrl = `https://live.staticflickr.com/${category.server}/${category.primary}_${category.secret}_n.jpg`;
+			$(`
+				<div class="col-md-4" data-id="${category.id}">
+					<div class="card mb-4 shadow-sm" style="background-image: url(${imgUrl})">
+						<div class="card-body">
+							<p class="card-text">San Francisco Bay Area</p>
+						</div>
+					</div>
+				</div>
+			`).appendTo('.category');
+		}
+	}
+
+	function fillGallery(id) {
+		if(gallery[id] && gallery[id].photos) {
+			const imgs = gallery[id].photos;
+			for(var i=0 ; i < imgs.length ; i++) {
+				$(`
+					<div class="carousel-item">
+						<img src="${imgs[i]}" class="d-block w-100" />
+					</div>
+				`).appendTo('.carousel-inner');
+	  			$('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators');
+
+	  		}
+			$('.carousel-item').first().addClass('active');
+		  	$('.carousel-indicators > li').first().addClass('active');
+		  	$('#carousel-example-generic').carousel();
+		}
+	}
+
+	function clearCarousel() {
+		$('.carousel-inner').html('');
+		$('.carousel-indicators').html('');
+	}
 })(jQuery);
