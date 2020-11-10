@@ -13,19 +13,20 @@ header .nav-item .nav-link {
 	color: #117a8b;
 }
 
-
-
 .jumbotron {
-    margin-top: 20px;
+	margin-top: 20px;
 }
-
 
 .category .card {
 	background-repeat: no-repeat;
-    background-size: cover;
-    height: 150px;
-    background-position: center;
-    cursor: pointer;
+	background-size: 100% auto;
+	height: 150px;
+	background-position: center;
+	cursor: pointer;
+	transition: background-size 1.5s ease-in-out;
+}
+.category .card:hover {
+	background-size: 120% auto;
 }
 
 .card .card-body {
@@ -49,12 +50,12 @@ header .nav-item .nav-link {
 }
 
 .carousel-item img {
-    position: absolute!important;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
+	position: absolute!important;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
 }
 
 footer {
@@ -85,15 +86,15 @@ footer {
 
 #btn {
 	display: flex;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 9999;
-    margin-bottom: 20px;
+	justify-content: flex-end;
+	position: relative;
+	z-index: 9999;
+	margin-bottom: 20px;
 }
 
 #btn button {
 	border-color: #117a8b;
-    color: #117a8b;
+	color: #117a8b;
 }
 
 #btn button:hover {
