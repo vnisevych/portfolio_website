@@ -171,12 +171,18 @@ header .nav-item .nav-link {
 #wrapper .album .carousel,
 #wrapper.gallery .album .row, 
 #wrapper.gallery .separator,
-#wrapper.gallery #contact-me{
+#wrapper.gallery #contact-me,
+#wrapper.gallery .jumbotron,
+#wrapper.loading #carousel {
 	display: none;
 }
 
-#wrapper.gallery .jumbotron {
-	display: none;
+#wrapper .spinner {
+	display: none!important;
+}
+
+#wrapper.loading .spinner {
+	display: flex!important;
 }
 
 #btn {

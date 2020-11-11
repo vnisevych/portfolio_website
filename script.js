@@ -61,21 +61,19 @@
 		$("#wrapper").delegate( ".col-md-4", "click", function(e) {
 			const id = $(this).attr('data-id');
 			fillGallery(id);
-			$('#wrapper').toggleClass('gallery');
 		});
 
 		//back button onclick event - removing class gallery and clearing carousel
 		$('#btnBack').on( 'click', (function() {
-			$('#wrapper').toggleClass('gallery');
 			clearCarousel();
 		}));
-		
+
 		//setting click event on buttons left and right for carousel
 		$( "#wrapper" ).delegate('.carousel-control-prev', 'click', function() {
-			$('#carousel-example-generic').carousel('prev');
+			$('#carousel').carousel('prev');
 		});
 		$( "#wrapper" ).delegate('.carousel-control-next', 'click', function() {
-			$('#carousel-example-generic').carousel('next');
+			$('#carousel').carousel('next');
 		});
 
 		$('#contact-form input').on('blur', function() {
@@ -110,7 +108,7 @@
 			return;
 		}
 		const imgs = gallery[id].photos;
-
+		$('#wrapper').toggleClass('loading');
 		//filling the gallery with photos and indicators
 		for(let i=0 ; i < imgs.length ; i++) {
 			$(`
@@ -118,18 +116,24 @@
 				<img src="${imgs[i]}" class="d-block w-100" />
 				</div>
 				`).appendTo('.carousel-inner');
-			$('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators');
+			$('<li data-target="#carousel" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators');
 
 		}
 
 		$('.carousel-item').first().addClass('active');
 		$('.carousel-indicators > li').first().addClass('active');
-		$('#carousel-example-generic').carousel();
+		$('#carousel').carousel();
+		$('.carousel-item').last().find('img').on('load', function() {
+			$('#wrapper').toggleClass('loading');
+		});
+		$('#wrapper').toggleClass('gallery');
 	} 
 
 	function clearCarousel() {
 		$('.carousel-inner').html('');
 		$('.carousel-indicators').html('');
+		$('#wrapper').toggleClass('gallery');
+		;
 	}
 
 	function updateLink() {
