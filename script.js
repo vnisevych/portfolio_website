@@ -77,7 +77,7 @@
 				<div class="col-md-4" data-id="${category.id}">
 					<div class="card mb-4 shadow-sm" style="background-image: url(${imgUrl})">
 						<div class="card-body">
-							<p class="card-text">San Francisco Bay Area</p>
+							<p class="card-text">${category.title._content}</p>
 						</div>
 					</div>
 				</div>
@@ -99,9 +99,9 @@
 	  		}
 			$('.carousel-item').first().addClass('active');
 		  	$('.carousel-indicators > li').first().addClass('active');
-		  	$('#carousel-example-generic').carousel();
+		  	$('#carousel-example-generic').carousel({ride: false});
 		}
-	}
+	} 
 
 	function clearCarousel() {
 		$('.carousel-inner').html('');
