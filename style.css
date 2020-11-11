@@ -61,7 +61,36 @@ header .nav-item .nav-link {
 	right: 0;
 }
 
-.jumbotron {
+#intro {
+	background: transparent;
+}
+#intro:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(155deg, #005abf 55%, #003571 100%);
+    left: 0;
+    height: 355px;
+    z-index: -1;
+}
+
+#intro .lead {
+    font-size: 25px;
+    text-align: center;
+    margin: 40px 0 80px;
+}
+
+.info svg {
+    margin: 20px 0 0;
+}
+
+.info h3 {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+#about {
 	margin-top: 20px;
 }
 
