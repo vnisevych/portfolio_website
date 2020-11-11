@@ -6,6 +6,8 @@
 	<title>Veronika Nisevych</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column">
@@ -70,9 +72,98 @@
 
 				</div>
 
+				<!-- Contact me form -->
+				<div id="contact-me" class="container">
+					<!--Section: Contact v.2-->
+					<section class="mb-4">
+
+						<!--Section heading-->
+						<h2 class="h1-responsive font-weight-bold text-center my-4">Contact me</h2>
+						<!--Section description-->
+						<p class="text-center w-responsive mx-auto mb-5">Let me know if you have any questions!</p>
+
+						<div class="row">
+
+							<!--Grid column-->
+							<div class="col-md-9 mb-md-0 mb-5">
+								<form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+									<!--Grid row-->
+									<div class="row">
+										<!--Grid column-->
+										<div class="col-md-6">
+											<div class="md-form mb-0">
+												<label for="name" class="">Your name</label>
+												<input type="text" id="name" name="name" class="form-control">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="md-form mb-0">
+												<label for="email" class="">Your email</label>
+												<input type="text" id="email" name="email" class="form-control">
+											</div>
+										</div>
+										<!--Grid column-->
+
+									</div>
+
+									<div class="row">
+										<!--Grid column-->
+										<div class="col-md-12">
+											<div class="md-form">
+												<label for="message">Your message</label>
+												<textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+											</div>
+
+										</div>
+									</div>
+									<!--Grid row-->
+
+								</form>
+
+								<div class="text-center text-md-left">
+									<a id="submit-form" class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+								</div>
+								<div class="status"></div>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-md-3 text-center tip">
+								<ul class="list-unstyled mb-0">
+									<li><i class="fas fa-map-marker-alt fa-2x"></i>
+										<span class="material-icons">
+											location_on
+										</span>
+										<p>San Jose, CA 95134, USA</p>
+									</li>
+									<li>
+										<span class="material-icons">
+											email
+										</span>
+										<p>vnisevych@gmail.com</p>
+									</li>
+								</ul>
+							</div>
+							<!--Grid column-->
+
+						</div>
+
+					</section>
+					<!--Section: Contact v.2-->
+				</div>
+
 			</main>
 
+			<div id="about" class="jumbotron">
+				<div id="about-text" class="row" >
+					<h1>Hi, I am Veronika. Nice to meet you.</h1>
+					<p>I was working for healthcare companies for more than ten years, but tech development has always fascinated and interested me. So back in Ukraine in 2014 I finished Computer Academy STEP. My previous experience in healthcare left me with perseverance, attention to detail, relevant experience in working with a team with many different people from all over the world, and a pedantic desire to write clean, elegant, and efficient code. After moving to the US in 2018 I confidently decided to pursue and refresh my knowledge in programming, and that I would like to achieve goals that will help me to start my career in tech. Regularly, I attended Meetups on JavaScript, HTML, Angular, to self-educate used such resources as MDN, Pluralsight courses, Angular Bootcamp, developed testing websites such as <a href="https://github.com/vnisevych/Stanford-Quiz-and-Extensions-Homework">Stanford-Quiz-and-Extensions-Homework</a>, landing pages, etc. Currently finishing Harvard CS50 course with certification, daily solving algorithms on HackerRank/Codewars. I would love to have an opportunity to dedicate my time and my eagerness to learn everything needed to become a skilled Front-end-Developer.</p>
+				</div>
+			</div>
 		</div>
+
 
 		<footer class="card-footer text-muted">
 			<p>Handcrafted by me<a href="#"></a></p>

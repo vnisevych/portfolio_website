@@ -7,6 +7,11 @@ body {
 
 #wrapper {
 	flex: 1;
+	max-width: 900px;
+}
+
+.container {
+	padding: 0;
 }
 
 header .nav-item .nav-link {
@@ -14,46 +19,46 @@ header .nav-item .nav-link {
 }
 
 #logo {
-    background: #005abf;
-    border-radius: 4px;
-    width: 50px;
-    height: 50px;
-    position: relative;
-    transition: all 0.2s ease;
+	background: #005abf;
+	border-radius: 4px;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	transition: all 0.2s ease;
 }
 
 #logo span {
-    color: #fff;
-    cursor: none;
-    font-weight: bold;
-    font-size: 35px;
+	color: #fff;
+	cursor: none;
+	font-weight: bold;
+	font-size: 35px;
 }
 
 #logo span:first-child {
-    position: absolute;
-    left: -5px;
-    transform: rotate(19deg);
+	position: absolute;
+	left: -5px;
+	transform: rotate(19deg);
 }
 
 #logo span:last-child {
-    position: absolute;
-    bottom: -12px;
-    right: -3px;
+	position: absolute;
+	bottom: -12px;
+	right: -3px;
 }
 #logo:hover {
 	border-radius: 0;
-    transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 
 #logo:hover span:first-child {
-    left: 0;
-    bottom: 0;
-    transform: rotate(0deg);
+	left: 0;
+	bottom: 0;
+	transform: rotate(0deg);
 }
 
 #logo:hover span:last-child {
-    bottom: 0;
-    right: 0;
+	bottom: 0;
+	right: 0;
 }
 
 .jumbotron {
@@ -88,7 +93,7 @@ header .nav-item .nav-link {
 }
 
 .carousel-item {
-	height: 500px;
+	height: 600px;
 	overflow: hidden;
 }
 
@@ -142,4 +147,32 @@ footer {
 
 #btn button:hover {
 	color: #fff;
+}
+
+#contact-me {
+	padding: 20px;
+	border: 3px dashed #777;
+}
+
+#contact-me h2 {
+	text-transform: uppercase;
+	color: #555;
+}
+
+
+#submit-form {
+	    margin-top: 20px;
+}
+
+#about #about-text {
+	display: flex;
+    justify-content: center;
+}
+
+#about-text h1 {
+	margin-bottom: 14px;
+}
+
+#about-text p {
+ padding: 0px 18px;
 }
