@@ -19,6 +19,10 @@ header .nav-item .nav-link {
 }
 
 #logo {
+	padding: 5px;
+}
+
+#logo div {
 	background: #005abf;
 	border-radius: 4px;
 	width: 50px;
@@ -42,10 +46,10 @@ header .nav-item .nav-link {
 
 #logo span:last-child {
 	position: absolute;
-	bottom: -12px;
+	bottom: -13px;
 	right: -3px;
 }
-#logo:hover {
+#logo:hover div{
 	border-radius: 0;
 	transform: rotate(360deg);
 }
@@ -64,35 +68,47 @@ header .nav-item .nav-link {
 #intro {
 	background: transparent;
 }
+
 #intro:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    background: linear-gradient(155deg, #005abf 55%, #003571 100%);
-    left: 0;
-    height: 355px;
-    z-index: -1;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	background: linear-gradient(155deg, #005abf 55%, #003571 100%);
+	left: 0;
+	height: 355px;
+	z-index: -1;
 }
 
 #intro .lead {
-    font-size: 25px;
-    text-align: center;
-    margin: 40px 0 80px;
+	font-size: 25px;
+	text-align: center;
+	margin: 40px 0 80px;
+}
+
+#intro .lead p span {
+	display: block;
+}
+
+#gallery-heading {
+	font-size: 26px;
+	font-weight: 200;
+	margin: 50px 0;
 }
 
 .info svg {
-    margin: 20px 0 0;
+	margin: 20px 0 0;
 }
 
 .info h3 {
-    font-size: 24px;
-    font-weight: 100;
+	font-size: 24px;
+	font-weight: 100;
 }
 
 #about {
 	margin-top: 20px;
 }
+
 
 .category .card {
 	background-repeat: no-repeat;
@@ -135,14 +151,14 @@ header .nav-item .nav-link {
 	margin: auto;
 }
 
-footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin-bottom: 20px;
+.separator {
+	height: 5px;
+	width: 250px;
+	border-radius: 255px;
+	background: var(--blue);
+	box-shadow: 1px 1px 2px #000; 
+	margin: 100px auto;
 }
-
-
 
 #wrapper.gallery .album .carousel {
 	display: block;
@@ -153,7 +169,9 @@ footer {
 }
 
 #wrapper .album .carousel,
-#wrapper.gallery .album .row {
+#wrapper.gallery .album .row, 
+#wrapper.gallery .separator,
+#wrapper.gallery #contact-me{
 	display: none;
 }
 
@@ -190,18 +208,56 @@ footer {
 
 
 #submit-form {
-	    margin-top: 20px;
+	margin-top: 20px;
+	margin-top: 20px;
+	padding: 5px 25px;
+	box-shadow: inset 1px 1px 2px #fff, inset -1px -1px 2px #000;
+}
 }
 
 #about #about-text {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 }
 
 #about-text h1 {
 	margin-bottom: 14px;
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: bold;
+	color: #333;
+	padding: 0 0 0 15px;
 }
 
 #about-text p {
- padding: 0px 18px;
+	padding: 0px 18px;
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+	background-color: #01102a;
+	height: 70px;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #9aa;
+}
+
+
+footer p {
+	margin: 0;
+}
+
+footer p span {
+	margin-left: 5px;
+}
+
+.pre-footer {
+	width: 100%;
+	background: linear-gradient(155deg, #2251a7 55%, #00276e 100%);
+	height: 280px;
+	margin-top: 100px;
+	clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
 }

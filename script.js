@@ -6,6 +6,9 @@
 	//object that will store the id of albums and photos in them;
 	const gallery = {};
 
+	//object to store form data fields
+	const formData = {};
+
 	const albumsUrl = `https://www.flickr.com/services/rest/?method=flickr.photosets.getList
 	&api_key=${apiKey}
 	&user_id=${usrId}
@@ -66,7 +69,7 @@
 			$('#wrapper').toggleClass('gallery');
 			clearCarousel();
 		}));
-
+		
 		//setting click event on buttons left and right for carousel
 		$( "#wrapper" ).delegate('.carousel-control-prev', 'click', function() {
 			$('#carousel-example-generic').carousel('prev');
@@ -75,6 +78,15 @@
 			$('#carousel-example-generic').carousel('next');
 		});
 
+		$('#contact-form input').on('blur', function() {
+			formData[$(this).attr('name')] = $(this).val();
+			updateLink();
+		});
+
+		$('#contact-form textarea').on('blur', function() {
+			formData[$(this).attr('name')] = $(this).val();
+			updateLink();
+		});
 
 	});
 
@@ -118,5 +130,20 @@
 	function clearCarousel() {
 		$('.carousel-inner').html('');
 		$('.carousel-indicators').html('');
+	}
+
+	function updateLink() {
+		formData.name = formData.name || '';
+		formData.message = formData.message || '';
+		formData.email = formData.email || '';
+
+		const mailto = `mailto:vnisevych@gmail.com?
+		&subject=Question regarding your portfolio website
+		&body=${formData.message}%0D%0A
+		Best wishes,%0D%0A
+		${formData.name}%0D%0A
+		${formData.email}`;
+
+		$('#submit-form').attr('href', mailto);
 	}
 })(jQuery);
