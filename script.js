@@ -68,6 +68,13 @@
 			clearCarousel();
 		}));
 
+		$('body').delegate('.gallery .nav-link', 'click', function() {
+			const clickedEl = $(this);
+			clearCarousel();
+			location.hash(clickedEl.attr('href'));
+
+		});
+
 		//setting click event on buttons left and right for carousel
 		$( "#wrapper" ).delegate('.carousel-control-prev', 'click', function() {
 			$('#carousel').carousel('prev');

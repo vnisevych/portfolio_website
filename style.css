@@ -81,13 +81,9 @@ header .nav-item .nav-link {
 }
 
 #intro .lead {
-	font-size: 25px;
+	font-size: 24px;
 	text-align: center;
 	margin: 40px 0 80px;
-}
-
-#intro .lead p span {
-	display: block;
 }
 
 #gallery-heading {
